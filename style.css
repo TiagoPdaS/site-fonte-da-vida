@@ -25,10 +25,17 @@ ul.nav {
     list-style: none;
 }
 
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 a {
     text-decoration: none;
-    color:var(--secondary-color);
-    font-size: 14px;
+    color: var(--secondary-color);
+    font-size: 12px;
 }
 
 header {
@@ -60,13 +67,15 @@ header ul.nav {
 header ul.nav li {
     margin: 0 15px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     position: relative;
 }
+
 header ul.nav li a {
     position: relative;
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
 }
+
 header ul.nav li a::after {
     content: '';
     position: absolute;
@@ -90,6 +99,7 @@ header ul.nav li:first-child {
 header ul.nav li:last-child {
     margin-right: 0;
 }
+
 .banner-btn {
     padding: 10px 20px;
     color: var(--secondary-color);
@@ -103,16 +113,16 @@ header ul.nav li:last-child {
 }
 
 @media(max-width:1000px) {
+    
     header {
         padding: 20px 50px;
     }
 }
 
 @media(max-width:800px) {
+    
     header {
         flex-direction: column;
-        
-
     }
 
     header h2 {
@@ -146,6 +156,12 @@ section {
         padding: 125px 30px;
         scroll-margin-top: 125px;
     }
+        section{
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+        }
+    
 }
 
 section p {
@@ -417,5 +433,5 @@ footer {
     text-align: center;
     color: var(--text-color);
     background-color: var(--background-color);
-    padding: 30px ;
+    padding: 30px;
 }
