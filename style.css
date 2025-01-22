@@ -27,7 +27,8 @@ ul.nav {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color:var(--secondary-color);
+    font-size: 14px;
 }
 
 header {
@@ -43,9 +44,7 @@ header {
     z-index: 5;
     width: 100%;
     background-color: var(--background-color);
-    /* Adicionado para visibilidade */
     transition: background-color 1.5s, color 1.5s;
-    /* Adicionado para transição suave */
 
 }
 
@@ -112,6 +111,7 @@ header ul.nav li:last-child {
 @media(max-width:800px) {
     header {
         flex-direction: column;
+        
 
     }
 
