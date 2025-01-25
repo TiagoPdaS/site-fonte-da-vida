@@ -35,7 +35,7 @@ ul.nav {
 a {
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 12px;
+    font-size: 16px;
 }
 
 header {
@@ -44,11 +44,12 @@ header {
     align-items: center;
     color: var(--secondary-color);
     font-weight: 700;
-    padding: 35px 100px 0;
+    margin-top: -25px;
+    padding: 10px 100px 0;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 3;
     width: 100%;
     background-color: var(--background-color);
     transition: background-color 1.5s, color 1.5s;
@@ -100,7 +101,7 @@ header ul.nav li:last-child {
     margin-right: 0;
 }
 
-.banner-btn {
+.btn-primary {
     padding: 10px 20px;
     color: var(--secondary-color);
     background: var(--btn-color);
@@ -112,15 +113,39 @@ header ul.nav li:last-child {
     justify-content: center;
 }
 
+.dropdown-menu {
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 10px 10px 10px 50px;
+
+}
+
+.dropdown-item {
+    white-space: nowrap;
+}
+
+.dropdown-item .bi-instagram {
+    color: #E1306C;
+}
+
+.dropdown-item .bi-whatsapp {
+    color: #25D366;
+}
+
+.dropdown-item .bi-envelope {
+    color: var(--btn-color);
+}
+
 @media(max-width:1000px) {
-    
+
     header {
         padding: 20px 50px;
     }
 }
 
 @media(max-width:800px) {
-    
+
     header {
         flex-direction: column;
     }
@@ -131,6 +156,10 @@ header ul.nav li:last-child {
 
     header ul.nav li {
         margin: 0 7px;
+    }
+
+    header ul.nav a {
+        font-size: 12px;
     }
 }
 
@@ -156,12 +185,13 @@ section {
         padding: 125px 30px;
         scroll-margin-top: 125px;
     }
-        section{
-            align-items: center;
-            justify-content: center;
-            color: var(--text-color);
-        }
-    
+
+    section {
+        align-items: center;
+        justify-content: center;
+        color: var(--text-color);
+    }
+
 }
 
 section p {
