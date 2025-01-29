@@ -338,6 +338,7 @@ ul.about-content {
     color: var(--secondary-color);
 }
 
+
 @media(max-width:1000px) {
     .section-title {
         font-size: 35px;
@@ -355,8 +356,24 @@ ul.about-content {
 }
 
 @media(max-width:700px) {
+    p{
+        color: var(--text-color);
+        width: 100%;
+
+    }
+    .about-right h2 {
+        color: var(--text-color);
+        align-items: center;
+        text-align: center;
+       }
+
     .about-right p {
-        display: none;
+        color: var(--text-color);
+        text-align: center;
+    }
+    .about-area .about-content{
+margin-bottom: 20px;
+padding-bottom: 20px;
     }
 }
 
@@ -491,6 +508,16 @@ ul.contact-content {
     }
 }
 
+@media(max-width:700px) {
+    .contact-area{
+        
+        padding-bottom: 20px;
+    }
+    .contact-area h3{
+        text-align: center;
+    }
+}
+
 /*footer*/
 footer {
     display: flex;
@@ -501,3 +528,4 @@ footer {
     background-color: var(--background-color);
     padding: 30px;
 }
+
