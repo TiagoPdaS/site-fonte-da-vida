@@ -352,14 +352,15 @@ ul.about-content {
     .about-content li {
         padding: 8px;
     }
+    .about-right {
+        margin-bottom: 20px;
+    }
 
 }
 
 @media(max-width:700px) {
     p{
         color: var(--text-color);
-        width: 100%;
-
     }
     .about-right h2 {
         color: var(--text-color);
@@ -371,9 +372,8 @@ ul.about-content {
         color: var(--text-color);
         text-align: center;
     }
-    .about-area .about-content{
-margin-bottom: 20px;
-padding-bottom: 20px;
+    .about-right {
+        margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
     }
 }
 
@@ -387,6 +387,7 @@ padding-bottom: 20px;
     background-attachment: fixed;
     color: var(--secondary-color);
     text-align: center;
+    padding: 50px 0;
 }
 
 .msg-area h2 {
