@@ -3,165 +3,170 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igreja Apostólica Fonte da Vida</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     <header>
-        <h2>
-            <a href="#"><img src="images/logo.webp" width="250px"></a>
-        </h2>
-        <ul class="nav">
-            <li><a href="#">Home</li>
-            <li><a href="#about">Sobre Nós</li>
-            <li><a href="#services">Ministérios</li>
-            <li><a href="#contact" class="nav-btn">Contato</a></li>
-
-        </ul>
+        <div class="container d-flex justify-content-between align-items-center">
+            <h2>
+                <a href="#"><img src="images/logo.webp" alt="Logo Igreja" width="250"></a>
+            </h2>
+            <button class="mobile-menu-btn d-md-none">
+                <i class="bi bi-list"></i>
+            </button>
+            <nav class="main-nav">
+                <ul class="nav d-flex align-items-center">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#services">Ministérios</a></li>
+                    <li><a href="#contact" class="nav-btn">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="banner-area">
-        <div class="banner-img"> </div>
-        <h3>Faça parte da nossa Família</h3>
-        <h1>Sejam <span>Bem-Vindos!</span></h1>
+    <section class="banner-area" id="home">
+        <div class="banner-img"></div>
+        <div class="banner-content">
+            <h3>Faça parte da nossa Família</h3>
+            <h1>Sejam Bem-Vindos!</h1>
 
-
-        <div class="dropdown">
-            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Mais Informações
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://www.instagram.com/fontedavidatoronto/" target="_blank"><i
-                            class="bi bi-instagram"></i> Instagram</a></li>
-                <li><a class="dropdown-item" href="https://wa.me/14377707282" target="_blank"><i
-                            class="bi bi-whatsapp"></i> WhatsApp</a></li>
-
-                <li><a class="dropdown-item" href="mailto:israelandrete@hotmail.com" target="_blank"><i
-                            class="bi bi-envelope"></i>
-                        E-mail</a></li>
-
-            </ul>
+            <div class="dropdown">
+                <button class="btn btn-lg dropdown-toggle custom-btn" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Mais Informações
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item " href="https://www.instagram.com/fontedavidatoronto/" target="_blank">
+                            <i class="bi bi-instagram instagram-link"></i> Instagram</a></li>
+                    <li><a class="dropdown-item " href="https://wa.me/14377707282" target="_blank">
+                            <i class="bi bi-whatsapp whatsapp-link"></i> WhatsApp</a></li>
+                    <li><a class="dropdown-item" href="mailto:israelandrete@hotmail.com" target="_blank">
+                            <i class="bi bi-envelope email-link"></i> E-mail</a></li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-    </section>
-<section>
     <section class="about-area" id="about">
-        <h3 class="section-title">Sobre <span>Nós</span></h3>
-        <ul class="about-content">
-            <li class="about-left"></li>
-            <li class="about-right">
-                <div>
-                <h2>Saiba mais sobre a Igreja Fonte da Vida</h2>
-                <p>A Igreja Fonte da Vida começou com uma Palavra de Deus chamando-nos para viver o modelo bíblico
-                    Apostólico. Há mais de trinta anos, com um grupo de poucos casais, o Apóstolo César Augusto e a
-                    Bispa Rúbia de Sousa iniciaram este projeto que veio do coração de Deus. Sendo a Fonte da Vida uma
-                    Igreja Apostólica, isso é, missionária, abrimos várias frentes que se tornaram Igrejas, em vários
-                    estados e nações.
-                    Nossa visão é ganhar a família em sua totalidade e, com esse intuito, trabalhamos em nossa estrutura
-                    com crianças, adolescentes, jovens , adultos e idosos, dando a mesma importância no apascentamento e
-                    na formação da estatura da plenitude de Cristo Jesus a cada uma das fases que compõem o
-                    desenvolvimento humano. Como parte do resgate do ser humano do reino das trevas para o Reino da Luz,
-                    a Igreja Fonte da Vida tem se tornado forte no evangelismo profético que inclui: Salvação,
-                    libertação, cura e restauração do homem. Com o mesmo objetivo temos como um dos braços da igreja as
-                    obras sociais. Contamos também com o Sistema Fonte de Comunicação (Rádio/TV), aprovado no Congresso
-                    Nacional, permitindo assim, uma abençoada programação de evangelização voltada para a família em
-                    geral. Tudo isso é fruto da obediência a uma visão dada ao Apóstolo César Augusto. Hoje estamos em
-                    mais de 500 cidades em todo território Brasileiro, e não parou por ai, estamos conquistando as
-                    nações: América do norte , continente Africano e Europa.</p>
+        <div class="container">
+            <h3 class="section-title">Sobre <span>Nós</span></h3>
+            <div class="about-content row">
+                <div class="about-left col-md-6"></div>
+                <div class="about-right col-md-6">
+                    <div>
+                        <h2>Saiba mais sobre a Igreja Fonte da Vida</h2>
+                        <p>A Igreja Fonte da Vida começou com uma Palavra de Deus chamando-nos para viver o modelo
+                            bíblico Apostólico. Há mais de trinta anos, com um grupo de poucos casais, o Apóstolo César
+                            Augusto e a Bispa Rúbia de Sousa iniciaram este projeto que veio do coração de Deus. Sendo a
+                            Fonte da Vida uma Igreja Apostólica, isso é, missionária, abrimos várias frentes que se
+                            tornaram Igrejas, em vários estados e nações.</p>
+                        <p>Nossa visão é ganhar a família em sua totalidade e, com esse intuito, trabalhamos em nossa
+                            estrutura com crianças, adolescentes, jovens, adultos e idosos, dando a mesma importância no
+                            apascentamento e na formação da estatura da plenitude de Cristo Jesus a cada uma das fases
+                            que compõem o desenvolvimento humano.</p>
+                        <p>Como parte do resgate do ser humano do reino das trevas para o Reino da Luz, a Igreja Fonte
+                            da Vida tem se tornado forte no evangelismo profético que inclui: Salvação, libertação, cura
+                            e restauração do homem. Com o mesmo objetivo temos como um dos braços da igreja as obras
+                            sociais.</p>
+                        <p>Contamos também com o Sistema Fonte de Comunicação (Rádio/TV), aprovado no Congresso
+                            Nacional, permitindo assim, uma abençoada programação de evangelização voltada para a
+                            família em geral. Tudo isso é fruto da obediência a uma visão dada ao Apóstolo César
+                            Augusto. Hoje estamos em mais de 500 cidades em todo território Brasileiro, e não parou por
+                            ai, estamos conquistando as nações: América do norte, continente Africano e Europa.</p>
+                    </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
-</section>
 
     <section class="msg-area">
-        <div class="msg-content">
-            <h2>Passagem da Semana</h2>
-            <p> Hebreus 11:1:
-
-                "Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos."</p>
+        <div class="container">
+            <div class="msg-content text-center">
+                <h2>Passagem da Semana</h2>
+                <p>"Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos."</p>
+                <span>Hebreus 11:1</span>
+            </div>
         </div>
     </section>
 
-    <section class="serveices-area" id="services">
-        <h3 class="section-title">Nossos <span>Ministérios</span></h3>
-        <ul class="services-content">
-            <li>
-                <h4>Louvor</h4>
-                <div class="service-item">
-
-                    <img src="images/louvor-fdv.jpeg" alt="ministerio de louvor-imagem">
-                    <div class="service-text">
+    <section class="services-area" id="services">
+        <div class="container">
+            <h3 class="section-title">Nossos <span>Ministérios</span></h3>
+            <div class="services-content row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-item">
                         <h4>Louvor</h4>
-                        <p>Salmos 95:1-2 (NVI): <br>
-                            "Venham! Cantemos ao Senhor com alegria! Aclamemos a Rocha da nossa salvação.
-                            Vamos à presença dele com ações de graças; vamos aclamá-lo com cânticos de louvor."</p>
+                        <img src="images/louvor-fdv.jpeg" alt="ministerio de louvor" class="img-fluid rounded-4">
+                        <div class="service-text">
+                            <p>Salmos 95:1-2 (NVI):<br>
+                                "Venham! Cantemos ao Senhor com alegria! Aclamemos a Rocha da nossa salvação.
+                                Vamos à presença dele com ações de graças; vamos aclamá-lo com cânticos de louvor."</p>
+                        </div>
                     </div>
                 </div>
-            </li>
 
-            <li>
-                <h4>Small Groups</h4>
-                <div class="service-item">
-                    <img src="images/small-groups.jpeg" alt="pequeno grupo de pessoas-imagem" srcset="">
-                    <div class="service-text">
-                        <p>Atos 2:46-47 (NVI):<br />
-                            "Todos os dias continuavam a reunir-se no pátio do templo. Partiam o pão em suas casas e
-                            juntos participavam das refeições, com alegria e sinceridade de coração, louvando a Deus e
-                            tendo a simpatia de todo o povo.
-                            E o Senhor lhes acrescentava diariamente os que iam sendo salvos." </p>
+                <div class="col-md-4 mb-4">
+                    <div class="service-item">
+                        <h4>Small Groups</h4>
+                        <img src="images/small-groups.jpeg" alt="pequeno grupo de pessoas" class="img-fluid rounded-4">
+                        <div class="service-text">
+                            <p>Atos 2:46-47 (NVI):<br>
+                                "Todos os dias continuavam a reunir-se no pátio do templo. Partiam o pão em suas casas e
+                                juntos participavam das refeições, com alegria e sinceridade de coração, louvando a Deus
+                                e
+                                tendo a simpatia de todo o povo."</p>
+                        </div>
                     </div>
                 </div>
-            </li>
-            <li>
-                <h4>Casados</h4>
-                <div class="service-item">
-                    <img src="images/casais.png" height="350px" alt="grupo de casais-imagem" srcset="">
-                    <div class="service-text">
-                        <p>Efésios 5:25-28 (NVI): <br>
-                            "Maridos, amem suas mulheres,
-                            assim como Cristo amou a igreja e entregou-se por ela para santificá-la, tendo-a purificado
-                            pelo lavar da água mediante a palavra, e para apresentá-la a si mesmo como igreja gloriosa,
-                            sem mancha nem ruga ou coisa semelhante, mas santa e inculpável. Da mesma forma, os maridos
-                            devem amar suas mulheres como a seus próprios corpos.
-                            Quem ama a sua mulher, ama a si mesmo."</p>
+
+                <div class="col-md-4 mb-4">
+                    <div class="service-item">
+                        <h4>Casados</h4>
+                        <img src="images/casais.png" alt="grupo de casais" class="img-fluid rounded-4">
+                        <div class="service-text">
+                            <p>Efésios 5:25-28 (NVI):<br>
+                                "Maridos, amem suas mulheres, assim como Cristo amou a igreja e entregou-se por ela
+                                para santificá-la, tendo-a purificado pelo lavar da água mediante a palavra."</p>
+                        </div>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <section class="contact-area" id="contact">
-        <h3 class="section-title">Entre em <Span>Contato</Span> conosco</h3>
-        <ul class="contact-content">
-            <li>
-                <i class="bi bi-geo-alt"></i>
-                <p>Laurence Service N, 1224 <br>North York, Toronto - ON, M6A 1E3 - Canadá</p>
-            </li>
-            <li>
-                <i class="bi bi-telephone"></i>
-                <p>+14377707282 <br> +55 (62) 4007-2910</p>
-            </li>
-            <li>
-                <i class="bi bi-envelope-at"></i>
-                <p>israelandrete@hotmail.com <br> Bispo Israel</p>
-            </li>
-        </ul>
-
+        <div class="container">
+            <h3 class="section-title">Entre em <span>Contato</span> conosco</h3>
+            <div class="contact-content row text-center">
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Laurence Service N, 1224<br>North York, Toronto - ON, M6A 1E3 - Canadá</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-telephone"></i>
+                    <p>+14377707282<br>+55 (62) 4007-2910</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-envelope-at"></i>
+                    <p>israelandrete@hotmail.com<br>Bispo Israel</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
+    <footer class="text-center py-4">
         <p>© Todos os direitos reservados | Fonte da Vida Toronto</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
