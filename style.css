@@ -228,6 +228,29 @@ header.scrolled {
     padding: 30px;
 }
 
+/*pano de leitura*/
+.bible-reading-section {
+    background-color: #f8f9fa;
+   
+    text-align: center;
+
+    scroll-margin-top: 80px; /* Ajuste conforme a altura do seu menu de navegação */
+    padding-top: 100px; /* Adiciona espaço extra no topo */
+    margin-top: -50px;
+}
+.bible-reading-card {
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.bible-reading-card:hover {
+    transform: scale(1.02);
+}
+.saiba-mais-btn {
+    margin-top: 15px;
+}
+
 /* Message Area */
 .msg-area {
     background-color: var(--primary-color);

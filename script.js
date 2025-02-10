@@ -56,3 +56,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+const passagensBiblicas = [
+    { livro: "Gênesis", capitulo: 1, versiculo: "1-31", texto: "Criação do mundo" },
+    { livro: "Mateus", capitulo: 1, versiculo: "1-25", texto: "Genealogia e nascimento de Jesus" },
+    // Adicione mais passagens aqui para cobrir todo o ano
+];
+
+function obterPassagemDoDia() {
+    const hoje = new Date();
+    const indiceDia = hoje.getDayOfYear() % passagensBiblicas.length;
+    const passagem = passagensBiblicas[indiceDia];
+
+    document.getElementById('passagem-biblica').textContent = 
+        `${passagem.livro} ${passagem.capitulo}:${passagem.versiculo} - ${passagem.texto}`;
+    
+    document.getElementById('data-leitura').textContent = 
+        `Data: ${hoje.toLocaleDateString('pt-BR')}`;
+}
+
+// Função para calcular o dia do ano
+Date.prototype.getDayOfYear = function() {
+    const start = new Date(this.getFullYear(), 0, 0);
+    const diff = this - start;
+    const oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+};
+
+// Carregar passagem ao carregar a página
+document.addEventListener('DOMContentLoaded', obterPassagemDoDia);

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Leitura Bíblica - Bíblia Completa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #f4f4f4; 
+        }
+        .plano-leitura { 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px; 
+            margin-top: 50px; 
+        }
+        .tabela-leitura { 
+            max-height: 500px; 
+            overflow-y: auto; 
+        }
+        .progresso-container {
+            margin-bottom: 20px;
+        }
+        .filtros {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="plano-leitura">
+            <h1 class="text-center mb-4">Plano de Leitura Bíblica - Bíblia Completa</h1>
+            
+            <div class="row filtros">
+                <div class="col-md-6">
+                    <input type="text" id="filtro-livro" class="form-control" placeholder="Filtrar por Livro">
+                </div>
+                <div class="col-md-6">
+                    <select id="filtro-testamento" class="form-select">
+                        <option value="">Todos os Testamentos</option>
+                        <option value="Antigo">Antigo Testamento</option>
+                        <option value="Novo">Novo Testamento</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="progresso-container">
+                <div class="progress">
+                    <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <div class="tabela-leitura">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Livro</th>
+                            <th>Capítulo</th>
+                            <th>Testamento</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaLeitura">
+                        <!-- Conteúdo será preenchido por JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Plano de Leitura Bíblica Completo
+        const planoDeLeitura = (() => {
+            const livrosAntigo = [
+                "Gênesis", "Êxodo", "Levítico", "Números", "Deuteronômio", 
+                "Josué", "Juízes", "Rute", "1 Samuel", "2 Samuel", 
+                "1 Reis", "2 Reis", "1 Crônicas", "2 Crônicas", "Esdras", 
+                "Neemias", "Ester", "Jó", "Salmos", "Provérbios", 
+                "Eclesiastes", "Cantares", "Isaías", "Jeremias", "Lamentações", 
+                "Ezequiel", "Daniel", "Oséias", "Joel", "Amós", 
+                "Obadias", "Jonas", "Miqueias", "Naum", "Habacuque", 
+                "Sofonias", "Ageu", "Zacarias", "Malaquias"
+            ];
+
+            const livrosNovo = [
+                "Mateus", "Marcos", "Lucas", "João", "Atos", 
+                "Romanos", "1 Coríntios", "2 Coríntios", "Gálatas", "Efésios", 
+                "Filipenses", "Colossenses", "1 Tessalonicenses", "2 Tessalonicenses", 
+                "1 Timóteo", "2 Timóteo", "Tito", "Filemom", "Hebreus", 
+                "Tiago", "1 Pedro", "2 Pedro", "1 João", "2 João", 
+                "3 João", "Judas", "Apocalipse"
+            ];
+
+            function gerarPlanoDeLeitura() {
+                const planoCompleto = [];
+                let diaAtual = 1;
+
+                // Função para obter número de capítulos
+                function obterCapitulos(livro) {
+                    const capitulos = {
+                        "Gênesis": 50, "Êxodo": 40, "Levítico": 27, "Números": 36, 
+                        "Deuteronômio": 34, "Josué": 24, "Juízes": 21, "Rute": 4, 
+                        "1 Samuel": 31, "2 Samuel": 24, "1 Reis": 22, "2 Reis": 25, 
+                        "1 Crônicas": 29, "2 Crônicas": 36, "Esdras": 10, "Neemias": 13, 
+                        "Ester": 10, "Jó": 42, "Salmos": 150, "Provérbios": 31, 
+                        "Eclesiastes": 12, "Cantares": 8, "Isaías": 66, "Jeremias": 52, 
+                        "Lamentações": 5, "Ezequiel": 48, "Daniel": 12, "Oséias": 14, 
+                        "Joel": 3, "Amós": 9, "Obadias": 1, "Jonas": 4, "Miqueias": 7, 
+                        "Naum": 3, "Habacuque": 3, "Sofonias": 3, "Ageu": 2, 
+                        "Zacarias": 14, "Malaquias": 4,
+
+                        "Mateus": 28, "Marcos": 16, "Lucas": 24, "João": 21, "Atos": 28, 
+                        "Romanos": 16, "1 Coríntios": 16, "2 Coríntios": 13, "Gálatas": 6, 
+                        "Efésios": 6, "Filipenses": 4, "Colossenses": 4, 
+                        "1 Tessalonicenses": 5, "2 Tessalonicenses": 3, 
+                        "1 Timóteo": 6, "2 Timóteo": 4, "Tito": 3, "Filemom": 1, 
+                        "Hebreus": 13, "Tiago": 5, "1 Pedro": 5, "2 Pedro": 3, 
+                        "1 João": 5, "2 João": 1, "3 João": 1, "Judas": 1, "Apocalipse": 22
+                    };
+                    return capitulos[livro] || 1;
+                }
+
+                // Combinar e distribuir livros
+                const todosLivros = [...livrosAntigo, ...livrosNovo];
+                const totalDias = 365;
+
+                todosLivros.forEach(livro => {
+                    const totalCapitulos = obterCapitulos(livro);
+                    
+                    for (let capitulo = 1; capitulo <= totalCapitulos; capitulo++) {
+                        planoCompleto.push({
+                            dia: diaAtual,
+                            livro: livro,
+                            capitulo: capitulo,
+                            testamento: livrosAntigo.includes(livro) ? "Antigo" : "Novo"
+                        });
+
+                        diaAtual++;
+                        if (diaAtual > totalDias) {
+                            diaAtual = 1;
+                        }
+                    }
+                });
+
+                return planoCompleto;
+            }
+
+            return gerarPlanoDeLeitura();
+        })();
+
+        function preencherTabelaLeitura(dadosFiltrados) {
+            const tbody = document.getElementById('tabelaLeitura');
+            tbody.innerHTML = ''; // Limpar conteúdo anterior
+
+            dadosFiltrados.forEach(leitura => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${leitura.dia}</td>
+                    <td>${leitura.livro}</td>
+                    <td>${leitura.capitulo}</td>
+                    <td>${leitura.testamento}</td>
+                    <td>
+                        <input type="checkbox" class="form-check-input leitura-check" 
+                               data-dia="${leitura.dia}" data-livro="${leitura.livro}">
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            configurarProgresso();
+        }
+
+        function configurarFiltros() {
+            const filtroLivro = document.getElementById('filtro-livro');
+            const filtroTestamento = document.getElementById('filtro-testamento');
+
+            function filtrarPlano() {
+                const termoBusca = filtroLivro.value.toLowerCase();
+                const testamentoSelecionado = filtroTestamento.value;
+
+                const dadosFiltrados = planoDeLeitura.filter(leitura => {
+                    const correspondeLivro = leitura.livro.toLowerCase().includes(termoBusca);
+                    const correspondeTeste = testamentoSelecionado === "" || 
+                        leitura.testamento === testamentoSelecionado;
+                    
+                    return correspondeLivro && correspondeTeste;
+                });
+
+                preencherTabelaLeitura(dadosFiltrados);
+            }
+
+            filtroLivro.addEventListener('input', filtrarPlano);
+            filtroTestamento.addEventListener('change', filtrarPlano);
+        }
+
+        function configurarProgresso() {
+            const checkboxes = document.querySelectorAll('.leitura-check');
+            const progressBar = document.getElementById('progress-bar');
+
+            // Carregar estado salvo
+            checkboxes.forEach(checkbox => {
+                const dia = checkbox.getAttribute('data-dia');
+                const livro = checkbox.getAttribute('data-livro');
+                const chave = `leitura_${livro}_dia_${dia}`;
+                const lido = localStorage.getItem(chave);
+                checkbox.checked = lido === 'true';
+            });
+
+            // Atualizar progresso
+            function atualizarProgresso() {
+                const totalLeituras = checkboxes.length;
+                const leiturasConcluidas = Array.from(checkboxes).filter(cb => cb.checked).length;
+                const porcentagem = (leiturasConcluidas / totalLeituras) * 100;
+
+                progressBar.style.width = `${porcentagem}%`;
+                progressBar.textContent = `${porcentagem.toFixed(0)}%`;
+            }
+
+            // Evento de mudança para cada checkbox
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const dia = this.getAttribute('data-dia');
+                    const livro = this.getAttribute('data-livro');
+                    const chave = `leitura_${livro}_dia_${dia}`;
+                    localStorage.setItem(chave, this.checked);
+                    atualizarProgresso();
+                });
+            });
+
+            // Chamar uma vez para configurar o progresso inicial
+            atualizarProgresso();
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            preencherTabelaLeitura(planoDeLeitura);
+            configurarFiltros();
+        });
+    </script>
+</body>
+</html>
