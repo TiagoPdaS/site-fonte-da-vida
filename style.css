@@ -362,4 +362,8 @@ footer {
     .main-nav a {
         font-size: 1.5rem;
     }
+
+    .banner-area h1{
+        font-size: 2rem;
+    }
 }
