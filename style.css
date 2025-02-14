@@ -79,7 +79,7 @@ header.scrolled {
 }
 
 .main-nav a:hover {
-    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 .nav-btn {
@@ -203,6 +203,7 @@ header.scrolled {
     border-color: var(--white); 
 }
 
+
 /* About Area */
 .about-area {
     padding: 80px 0;
@@ -220,13 +221,16 @@ header.scrolled {
 }
 
 .about-left {
-    background: url('images/img-fontedavida.png') no-repeat center center/cover;
+    background: url('images/img-bispos.png') no-repeat center center/cover;
+    border-radius: 10px 65px;
     min-height: 400px;
 }
 
 .about-right {
     padding: 30px;
 }
+
+
 
 /*pano de leitura*/
 .bible-reading-section {
