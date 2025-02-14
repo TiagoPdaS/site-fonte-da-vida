@@ -19,9 +19,10 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
+
 section {
-    scroll-margin-top: 110px; 
-  }
+    scroll-margin-top: 110px;
+}
 
 /* Header Styles */
 header {
@@ -106,7 +107,7 @@ header.scrolled {
 
     .mobile-menu-btn {
         display: block;
-        
+
     }
 
     .main-nav {
@@ -115,7 +116,7 @@ header.scrolled {
         align-items: center;
         width: 100%;
         padding: 15px;
-     
+
     }
 
     .main-nav.active {
@@ -183,24 +184,29 @@ header.scrolled {
 }
 
 .instagram-link {
-    color: #E1306C; /* Cor do Instagram */
+    color: #E1306C;
+    /* Cor do Instagram */
 }
+
 .whatsapp-link {
-    color: #25D366; /* Cor do WhatsApp */
+    color: #25D366;
+    /* Cor do WhatsApp */
 }
+
 .email-link {
-    color: #D44638; /* Cor do Email */
+    color: #D44638;
+    /* Cor do Email */
 }
 
 .custom-btn {
     background-color: var(--secondary-color);
-    border-color: var(--secondary-color); 
+    border-color: var(--secondary-color);
     color: var(--white);
 }
 
 .custom-btn:hover {
     background-color: var(--hover-color);
-    border-color: var(--white); 
+    border-color: var(--white);
 }
 
 
@@ -234,32 +240,37 @@ header.scrolled {
 
 /*pano de leitura*/
 .bible-reading-section {
-    background-color: #f8f9fa;
-   
+    background-color: var(--primary-color);
+    color: var(--white);
     text-align: center;
-
-    scroll-margin-top: 80px; /* Ajuste conforme a altura do seu menu de navegação */
-    padding-top: 100px; /* Adiciona espaço extra no topo */
+     scroll-margin-top: 80px;
+    padding-top: 100px;
     margin-top: -50px;
+    padding-bottom: 50px;
 }
+
 .bible-reading-card {
     max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 15px auto;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
 .bible-reading-card:hover {
     transform: scale(1.02);
 }
+
 .saiba-mais-btn {
     margin-top: 15px;
     background-color: var(--secondary-color);
-    border-color: var(--secondary-color); 
+    border-color: var(--secondary-color);
     color: var(--white);
 }
+
 .saiba-mais-btn:hover {
     background-color: var(--hover-color);
-    border-color: var(--white); 
+    border-color: var(--white);
 }
 
 
@@ -289,7 +300,7 @@ header.scrolled {
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -367,7 +378,7 @@ footer {
         font-size: 1.5rem;
     }
 
-    .banner-area h1{
+    .banner-area h1 {
         font-size: 2rem;
     }
 }
