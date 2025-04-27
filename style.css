@@ -227,16 +227,20 @@ header.scrolled {
 }
 
 .about-left {
-    background: url('images/img-bispos.png') no-repeat center center/cover;
-    border-radius: 10px 65px;
-    min-height: 400px;
+   
+    overflow: hidden; /* Garante que o border-radius funcione com a imagem */
 }
 
 .about-right {
     padding: 30px;
 }
 
-
+.about-left img {
+    border-radius: 20px 100px 20px 55px !important; /* Força a aplicação do border-radius */
+    display: block; /* Garante que a imagem seja tratada como um bloco */
+    width: 100%; /* Ajusta a largura da imagem ao contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
 
 /*pano de leitura*/
 .bible-reading-section {
